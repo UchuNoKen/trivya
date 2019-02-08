@@ -19,4 +19,4 @@ function category(state = {}, action) {
   }
 }
 
-export default categories;
+export default combineReducers({ categories, category });

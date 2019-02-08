@@ -5,7 +5,7 @@ import { setCategories } from "../actions";
 
 class App extends Component {
   componentDidMount() {
-    if (this.props.categories === 0) {
+    if (this.props.categories.length === 0) {
       fetch("http://jservice.io/api/categories?count=20")
         .then(response => response.json())
         .then(json => this.props.setCategories(json));
@@ -13,7 +13,7 @@ class App extends Component {
   }
 
   render() {
-    // console.log("App props", this.props);
+    console.log("App props", this.props);
     return (
       <div>
         <h2>Trivya</h2>

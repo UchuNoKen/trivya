@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import Clue from "./Clue";
 
 class Category extends Component {
   constructor() {
@@ -27,7 +28,7 @@ class Category extends Component {
         </Link>
         <h2>{this.props.category.title}</h2>
         {this.state.clues.map(clue => {
-          return <div key={clue.id}>{clue.question}</div>;
+          return <Clue key={clue.id} clue={clue} />;
         })}
       </div>
     );
